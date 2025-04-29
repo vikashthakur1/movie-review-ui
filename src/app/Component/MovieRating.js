@@ -1,10 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-export default function MovieRating(props){
+export const MovieRating = ({ rating }) => {
   return (
-    <div>
-      <h4>{props.movieRating}</h4>
+    <div className="movie-rating">
+      <p>Movie Rating: {rating} / 5</p>
+      <p>
+        {Array.from({ length: rating }, (_, i) => (
+          <span key={i}>⭐</span>
+        ))}
+      </p>
     </div>
-    
-  )
-}
+  );
+};
